@@ -30,13 +30,25 @@ function getComChoice(){
 function answer(){
     const com = getComChoice();
     const human = getHumanChoice();
-    if(com === human){return "draw";}
-    else if (human === 1 && com === 3 || human === com + 1){
-            if (human === 1){console.log("rock")
-                
-            }
-        return "human win"
+    if(com === human){
+        if (human === 1 || com ===1){return "Both choose rock"} 
+        else if (human === 2 || com ===2){return "Both choose paper"}
+        else {return "Both choose scissor"}}
+    if (human === 1 && com === 3 || human === com + 1){
+        if (human === 1){
+        return "human win by rock"}
+            else if (human === 2){
+            return "human win by paper"}
+                else {return "human win by scissor"}
+        }
+    else { 
+        if (com === 1){
+            return "bot win by rock"
+        }
+        else if (com === 2){
+            return "bot win by paper"
+        }
+        else {return "bot win by scissor"}    
     }
-    else { return "human lost"}
 }
 console.log(answer())
